@@ -1,7 +1,7 @@
 # TimeToStudy
 Гаврилов Д.И. ВКР на тему Разработка компьютерной игры с помощью Unity
 Данная игра разрабатывалась студентом 4 курса БФУ им. Иммануила Канта для выпускной квалификационной работы.
-Assets которыеиспользовались указываю внизу в нумерном порядке:
+Assets, которые использовались, указываю внизу в нумерном порядке:
 1. https://assetstore.unity.com/packages/2d/textures-materials/world-materials-free-150182
 2. https://assetstore.unity.com/packages/2d/textures-materials/realistic-daytime-skybox-2k-196764
 3. https://assetstore.unity.com/packages/3d/environments/planets-of-the-solar-system-3d-90219

@@ -4734,6 +4734,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8729955707792240087, guid: 8e246fa26599fe44a8b597c2757e8c25, type: 3}
   m_PrefabInstance: {fileID: 485933215}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &773344359 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2359661207030069987, guid: 760b181968ec26a4993dd828b8092a11, type: 3}
+  m_PrefabInstance: {fileID: 1757511898}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43569d3e7d6c1944fb2533633f2c9510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &774566388 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1756464774094550, guid: 6e35b9c040b5a1248ab789b5a16c9af8, type: 3}
@@ -12291,6 +12302,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4091039515495205803, guid: b6f4ab860ba7149449b2eb0818fac59c, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 773344359}
     - target: {fileID: 4091039515495205803, guid: b6f4ab860ba7149449b2eb0818fac59c, type: 3}
       propertyPath: playerTransform
       value: 

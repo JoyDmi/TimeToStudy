@@ -24,6 +24,7 @@ public class QuestController : MonoBehaviour
     [SerializeField] GameObject ShuttleEvent;
     [SerializeField] Camera MainCamera;
 
+    
     private bool buttonClicked = false;
     private bool[] planetButtonClicked;
     private int completedQuestsOne = 0;
@@ -77,6 +78,7 @@ public class QuestController : MonoBehaviour
 
     void Update()
     {
+        
         if (buttonClicked)
         {
             QuestsPanel.SetActive(true);
@@ -96,8 +98,12 @@ public class QuestController : MonoBehaviour
                 TextTwo.GetComponent<TextMeshProUGUI>().faceColor = Color.green;
                 clr.color = Color.green;
                 ShuttleEvent.SetActive(false);
+
+                
+
                 // Включаем камеру
                 MainCamera.enabled = true;
+                MainCamera.GetComponent<AudioListener>().enabled = true;
                 // Активируем третью панель квестов
                 QuestThree.SetActive(true);
                 Cursor.lockState = CursorLockMode.Confined;
@@ -112,6 +118,7 @@ public class QuestController : MonoBehaviour
         }
 
     }
+   
 
     public void OnButtonClicked()
     {
@@ -137,6 +144,7 @@ public class QuestController : MonoBehaviour
 
         if (completedQuestsOne == planetButtons.Length)
         {
+            
             QuestTwo.SetActive(true);
             TextOne.GetComponent<TextMeshProUGUI>().text = "Всего " + completedQuestsOne + "/" + planetButtons.Length;
             Image clr = QuestBoolOne.GetComponent<Image>();

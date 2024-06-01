@@ -14,11 +14,12 @@ public class PlayerCamera : MonoBehaviour
     private Vector3 rotationSmoothVelocity; // Сглаженная скорость вращения
     private Vector3 currentRotation; // Текущее вращение
 
+    public PauseMenu pauseMenu;
+
     private void Start()
     {
         // Блокировка курсора и скрытие его
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        pauseMenu.SetCursorState(CursorLockMode.Locked, false);
     }
 
     private void FixedUpdate()

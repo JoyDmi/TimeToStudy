@@ -10,8 +10,8 @@ public class FoodItem : MonoBehaviour, InterectableInterface
     public float healthChangeAmount; // Количество изменения здоровья
     public float jumpForceChangeAmount; // Количество изменения силы прыжка
     [SerializeField] GameObject ChoiseFood;
-    private AudioSource AudioEat;
-    public AudioClip eatSound;
+    //[SerializeField] AudioSource AudioEat;
+    //[SerializeField] AudioClip eatSound;
     public void Interact()
     {
         PlayerStats playerStats = FindObjectOfType<PlayerStats>();
@@ -27,7 +27,7 @@ public class FoodItem : MonoBehaviour, InterectableInterface
                 playerStats.ChangeHealth(-healthChangeAmount); // Уменьшаем здоровье
                 playerStats.ChangeJumpForce(-jumpForceChangeAmount); // Уменьшаем силу прыжка
             }
-            AudioEat.PlayOneShot(eatSound);
+            //AudioEat.PlayOneShot(eatSound);
             Destroy(ChoiseFood);
             Destroy(gameObject);// уничтожаем объект после взаимодействия
         }

@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Museum/Scene/Museum.unity
     guid: 4442cd1ee9a8bc14ea7ac1557b0b89c7
+  - enabled: 1
+    path: Assets/Zoj/Scene/Zoj.unity
+    guid: c05e8de5515f7af4fb30a610440e5cd7
   m_configObjects: {}

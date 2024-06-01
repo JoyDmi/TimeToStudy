@@ -2,21 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEngine.Timeline.AnimationPlayableAsset;
 
 public class MainMenu : MonoBehaviour
 {
 
-
-
-    public void Level1()
+    private void Start()
     {
-        SceneManager.LoadSceneAsync(1);
+        // Блокировка курсора и скрытие его
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
-    public void Level2()
+    public void LoadLevel(int levelIndex)
     {
-        SceneManager.LoadSceneAsync(2);
+        SceneManager.LoadSceneAsync(levelIndex);
     }
+
     public void QuitTheGame()
     {
         Application.Quit();

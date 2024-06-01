@@ -10,13 +10,13 @@ public class PlayerCameraMus : MonoBehaviour
     public float distanceFromPlayer = 40f; // расстояние от игрока до камеры
     public float heightOffset = 40f; // высота камеры относительно игрока
     public float horizontalOffset = 10f; // горизонтальное смещение камеры
-
+    public PauseMenu pauseMenu;
     private Vector3 currentRotation;
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        // Инициализация состояния курсора в начале игры
+        pauseMenu.SetCursorState(CursorLockMode.Locked, false);
     }
 
     private void LateUpdate()
@@ -34,4 +34,6 @@ public class PlayerCameraMus : MonoBehaviour
         transform.position = playerTransform.position + rotation * positionOffset;
         transform.LookAt(playerTransform.position + Vector3.up * heightOffset);
     }
+
+
 }

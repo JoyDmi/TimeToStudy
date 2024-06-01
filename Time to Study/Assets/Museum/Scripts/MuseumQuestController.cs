@@ -45,7 +45,7 @@ public class MuseumQuestController : MonoBehaviour
     void UpdatePlayedCount()
     {
         int playedCount = Bottons.Count(botton => botton.GetComponent<PlayAudioBotton>().isPlayed);
-        TextOne.GetComponent<TextMeshProUGUI>().text = "Воиспроизвести информацию о каждой технике, всего воиспроизведено " + playedCount + "/11";
+        TextOne.GetComponent<TextMeshProUGUI>().text = "Воиспроизвести информацию о каждой технике, всего воиспроизведено: " + playedCount + "/11";
     }
 
     void UpdateQuestTwo()

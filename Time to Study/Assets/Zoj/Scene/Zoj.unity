@@ -227,7 +227,7 @@ MonoBehaviour:
   foodType: 1
   description: "\u0412\u044B\u043F\u0438\u0442\u044C \u0430\u043B\u043A\u043E\u0433\u043E\u043B\u044C
     [E]"
-  healthChangeAmount: 11
+  healthChangeAmount: 20
   jumpForceChangeAmount: 5
   ChoiseFood: {fileID: 2100548447}
 --- !u!64 &661483
@@ -2690,7 +2690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodType: 1
   description: "\u0412\u044B\u043F\u0438\u0442\u044C \u043A\u043E\u043B\u0443 [E]"
-  healthChangeAmount: 10
+  healthChangeAmount: 20
   jumpForceChangeAmount: 5
   ChoiseFood: {fileID: 1929537660}
 --- !u!64 &652288354
@@ -4524,7 +4524,6 @@ GameObject:
   - component: {fileID: 1040313806}
   - component: {fileID: 1040313805}
   - component: {fileID: 1040313808}
-  - component: {fileID: 1040313809}
   m_Layer: 0
   m_Name: PlatformOne
   m_TagString: Untagged
@@ -4633,33 +4632,6 @@ MonoBehaviour:
   startPoint: {fileID: 1657782577}
   endPoint: {fileID: 1346276604}
   speed: 2
---- !u!54 &1040313809
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1040313803}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 112
-  m_CollisionDetection: 2
 --- !u!1 &1049472011
 GameObject:
   m_ObjectHideFlags: 0
@@ -4868,7 +4840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodType: 1
   description: "\u0421\u043A\u0443\u0448\u0430\u0442\u044C \u0447\u0438\u043F\u0441\u044B[E]"
-  healthChangeAmount: 10
+  healthChangeAmount: 20
   jumpForceChangeAmount: 5
   ChoiseFood: {fileID: 1928855426}
 --- !u!64 &1057253050
@@ -5686,7 +5658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5168769241532527860, guid: 39e69eeebae3b864d915b5a51b9358ea, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 62.71
       objectReference: {fileID: 0}
     - target: {fileID: 5168769241532527860, guid: 39e69eeebae3b864d915b5a51b9358ea, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6147,7 +6119,6 @@ GameObject:
   - component: {fileID: 1195172842}
   - component: {fileID: 1195172841}
   - component: {fileID: 1195172840}
-  - component: {fileID: 1195172844}
   m_Layer: 0
   m_Name: PlatformFour
   m_TagString: Untagged
@@ -6256,33 +6227,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195172838}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &1195172844
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195172838}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 112
-  m_CollisionDetection: 2
 --- !u!1 &1203448337
 GameObject:
   m_ObjectHideFlags: 0
@@ -7500,7 +7444,6 @@ GameObject:
   - component: {fileID: 1455470510}
   - component: {fileID: 1455470509}
   - component: {fileID: 1455470508}
-  - component: {fileID: 1455470512}
   m_Layer: 0
   m_Name: PlatformThree
   m_TagString: Untagged
@@ -7609,33 +7552,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455470506}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &1455470512
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1455470506}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 112
-  m_CollisionDetection: 2
 --- !u!1 &1461543386
 GameObject:
   m_ObjectHideFlags: 0
@@ -7649,7 +7565,6 @@ GameObject:
   - component: {fileID: 1461543389}
   - component: {fileID: 1461543388}
   - component: {fileID: 1461543391}
-  - component: {fileID: 1461543392}
   m_Layer: 0
   m_Name: PlatformTwo
   m_TagString: Untagged
@@ -7758,33 +7673,6 @@ MonoBehaviour:
   startPoint: {fileID: 1707209230}
   endPoint: {fileID: 1021428809}
   speed: 2
---- !u!54 &1461543392
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461543386}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 112
-  m_CollisionDetection: 2
 --- !u!1 &1471745577
 GameObject:
   m_ObjectHideFlags: 0
@@ -9363,7 +9251,7 @@ MonoBehaviour:
   foodType: 1
   description: "\u0421\u043A\u0443\u0448\u0430\u0442\u044C \u0431\u0443\u0442\u0435\u0440\u0431\u0440\u043E\u0434
     [E]"
-  healthChangeAmount: 11
+  healthChangeAmount: 20
   jumpForceChangeAmount: 5
   ChoiseFood: {fileID: 769018925}
 --- !u!64 &1910379873

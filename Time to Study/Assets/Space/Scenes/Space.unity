@@ -2124,7 +2124,7 @@ MonoBehaviour:
   - {fileID: 1403726275}
   - {fileID: 71780459}
   - {fileID: 1250749250}
-  IsElipticalOrbit: 1
+  IsElipticalOrbit: 0
 --- !u!4 &929946378
 Transform:
   m_ObjectHideFlags: 0
@@ -4680,6 +4680,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 929946380}
+    - target: {fileID: 5783981592340131118, guid: dff65df09f3924545a380f38bc9d7afc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c445a8fb9baaa414b9e31d871140eb81, type: 3}
     - target: {fileID: 5889930069341749258, guid: dff65df09f3924545a380f38bc9d7afc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

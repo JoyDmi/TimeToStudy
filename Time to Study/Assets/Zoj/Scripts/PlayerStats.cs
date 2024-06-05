@@ -75,17 +75,17 @@ public class PlayerStats : MonoBehaviour
         float scaleFactor = 1f;
         if (healthRatio < 1f)
         {
-            scaleFactor = Mathf.Lerp(1f, 1.5f, 1f - healthRatio); // Увеличиваем масштаб, если здоровье < 100%
+            scaleFactor = Mathf.Lerp(1f, 4f, 1f - healthRatio); // Увеличиваем масштаб, если здоровье < 100%
         }
         transform.localScale = new Vector3(originalScale.x * scaleFactor, originalScale.y, originalScale.z * scaleFactor);
 
         // Изменяем радиус CharacterController в зависимости от здоровья, если здоровье <= 100
-        if (currentHealth <= 100)
-        {
-            float radiusHealthRatio = currentHealth / 100f;
-            float newRadius = Mathf.Lerp(0.5f, 1f, 1f - radiusHealthRatio); // Изменяем диапазон наоборот
-            characterController.radius = newRadius;
-        }
+        //if (currentHealth <= 100)
+        //{
+        //    float radiusHealthRatio = currentHealth / 100f;
+        //    float newRadius = Mathf.Lerp(0.5f, 1f, 1f - radiusHealthRatio); // Изменяем диапазон наоборот
+        //    characterController.radius = newRadius;
+        //}
     }
 
     private void DestroyPlayer()

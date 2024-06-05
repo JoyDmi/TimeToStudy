@@ -5,6 +5,7 @@ public class Teleport : MonoBehaviour
     [SerializeField] GameObject player; // —сылка на игрока
     [SerializeField] Camera playerCamera; // —сылка на текущую камеру игрока
     [SerializeField] Camera teleportCamera; // —сылка на новую камеру
+    [SerializeField] GameObject shootquest; // —сылка на новую камеру
     public bool teleportTrigger = false;
 
     private void OnTriggerEnter(Collider other)
@@ -17,6 +18,7 @@ public class Teleport : MonoBehaviour
             teleportTrigger = true;
             // ¬ключаем новую камеру
             teleportCamera.gameObject.SetActive(true);
+            shootquest.SetActive(true);
         }
     }
 

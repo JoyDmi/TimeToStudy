@@ -1,58 +1,58 @@
-using System.Collections;
+п»їusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlanetMovement : MonoBehaviour
 {
-    private float G = 0.01f; // Гравитационная постоянная
-    [SerializeField] GameObject[] Spaceobjects; // Массив для хранения всех небесных тел
-    [SerializeField] bool IsElipticalOrbit = false; // Переменная, определяющая, движется ли планета по эллиптической орбите
-    private Dictionary<GameObject, Vector3> totalForces = new Dictionary<GameObject, Vector3>(); // Словарь для хранения суммарных сил, действующих на каждое небесное тело
+    private float G = 0.1f; // Р“СЂР°РІРёС‚Р°С†РёРѕРЅРЅР°СЏ РїРѕСЃС‚РѕСЏРЅРЅР°СЏ
+    [SerializeField] GameObject[] Spaceobjects; // РњР°СЃСЃРёРІ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ РІСЃРµС… РЅРµР±РµСЃРЅС‹С… С‚РµР»
+    [SerializeField] bool IsElipticalOrbit = false; // РџРµСЂРµРјРµРЅРЅР°СЏ, РѕРїСЂРµРґРµР»СЏСЋС‰Р°СЏ, РґРІРёР¶РµС‚СЃСЏ Р»Рё РїР»Р°РЅРµС‚Р° РїРѕ СЌР»Р»РёРїС‚РёС‡РµСЃРєРѕР№ РѕСЂР±РёС‚Рµ
+    private Dictionary<GameObject, Vector3> totalForces = new Dictionary<GameObject, Vector3>(); // РЎР»РѕРІР°СЂСЊ РґР»СЏ С…СЂР°РЅРµРЅРёСЏ СЃСѓРјРјР°СЂРЅС‹С… СЃРёР», РґРµР№СЃС‚РІСѓСЋС‰РёС… РЅР° РєР°Р¶РґРѕРµ РЅРµР±РµСЃРЅРѕРµ С‚РµР»Рѕ
 
     void Start()
     {
-        SetInitialVelocity(); // Вызов метода для установки начальной скорости каждого небесного тела
+        SetInitialVelocity(); // Р’С‹Р·РѕРІ РјРµС‚РѕРґР° РґР»СЏ СѓСЃС‚Р°РЅРѕРІРєРё РЅР°С‡Р°Р»СЊРЅРѕР№ СЃРєРѕСЂРѕСЃС‚Рё РєР°Р¶РґРѕРіРѕ РЅРµР±РµСЃРЅРѕРіРѕ С‚РµР»Р°
     }
 
     void FixedUpdate()
     {
-        Gravity(); // Обновление силы гравитации
-        foreach (GameObject a in Spaceobjects) // Обход всех небесных тел
+        Gravity(); // РћР±РЅРѕРІР»РµРЅРёРµ СЃРёР»С‹ РіСЂР°РІРёС‚Р°С†РёРё
+        foreach (GameObject a in Spaceobjects) // РћР±С…РѕРґ РІСЃРµС… РЅРµР±РµСЃРЅС‹С… С‚РµР»
         {
-            // Обновление позиции на основе текущей скорости
+            // РћР±РЅРѕРІР»РµРЅРёРµ РїРѕР·РёС†РёРё РЅР° РѕСЃРЅРѕРІРµ С‚РµРєСѓС‰РµР№ СЃРєРѕСЂРѕСЃС‚Рё
             a.transform.position += a.GetComponent<Rigidbody>().velocity * Time.deltaTime;
 
-            // Расчет ускорения на основе суммарной силы и массы
+            // Р Р°СЃС‡РµС‚ СѓСЃРєРѕСЂРµРЅРёСЏ РЅР° РѕСЃРЅРѕРІРµ СЃСѓРјРјР°СЂРЅРѕР№ СЃРёР»С‹ Рё РјР°СЃСЃС‹
             Vector3 acceleration = totalForces[a] / a.GetComponent<Rigidbody>().mass;
 
-            // Обновление скорости на основе ускорения
+            // РћР±РЅРѕРІР»РµРЅРёРµ СЃРєРѕСЂРѕСЃС‚Рё РЅР° РѕСЃРЅРѕРІРµ СѓСЃРєРѕСЂРµРЅРёСЏ
             a.GetComponent<Rigidbody>().velocity += acceleration * Time.deltaTime;
 
-            // Вращение небесного тела вокруг своей оси
-            a.transform.Rotate(Vector3.up, 50f * Time.deltaTime);
+            // Р’СЂР°С‰РµРЅРёРµ РЅРµР±РµСЃРЅРѕРіРѕ С‚РµР»Р° РІРѕРєСЂСѓРі СЃРІРѕРµР№ РѕСЃРё
+            a.transform.Rotate(Vector3.up, 20f * Time.deltaTime);
         }
     }
 
     void SetInitialVelocity()
     {
-        foreach (GameObject a in Spaceobjects) // Обход всех небесных тел для установки начальной скорости
+        foreach (GameObject a in Spaceobjects) // РћР±С…РѕРґ РІСЃРµС… РЅРµР±РµСЃРЅС‹С… С‚РµР» РґР»СЏ СѓСЃС‚Р°РЅРѕРІРєРё РЅР°С‡Р°Р»СЊРЅРѕР№ СЃРєРѕСЂРѕСЃС‚Рё
         {
-            foreach (GameObject b in Spaceobjects) // Обход всех небесных тел для расчета начальной скорости относительно других тел
+            foreach (GameObject b in Spaceobjects) // РћР±С…РѕРґ РІСЃРµС… РЅРµР±РµСЃРЅС‹С… С‚РµР» РґР»СЏ СЂР°СЃС‡РµС‚Р° РЅР°С‡Р°Р»СЊРЅРѕР№ СЃРєРѕСЂРѕСЃС‚Рё РѕС‚РЅРѕСЃРёС‚РµР»СЊРЅРѕ РґСЂСѓРіРёС… С‚РµР»
             {
-                if (!a.Equals(b)) // Исключение самого себя из расчета
+                if (!a.Equals(b)) // РСЃРєР»СЋС‡РµРЅРёРµ СЃР°РјРѕРіРѕ СЃРµР±СЏ РёР· СЂР°СЃС‡РµС‚Р°
                 {
-                    float m2 = b.GetComponent<Rigidbody>().mass; // Масса второго небесного тела
-                    float r = Vector3.Distance(a.transform.position, b.transform.position); // Расстояние между телами
-                    a.transform.LookAt(b.transform); // Установка направления взгляда на второе тело
+                    float M = b.GetComponent<Rigidbody>().mass; // РњР°СЃСЃР° РІС‚РѕСЂРѕРіРѕ РЅРµР±РµСЃРЅРѕРіРѕ С‚РµР»Р°
+                    float r = Vector3.Distance(a.transform.position, b.transform.position); // Р Р°СЃСЃС‚РѕСЏРЅРёРµ РјРµР¶РґСѓ С‚РµР»Р°РјРё
+                    a.transform.LookAt(b.transform); // РЈСЃС‚Р°РЅРѕРІРєР° РЅР°РїСЂР°РІР»РµРЅРёСЏ РІР·РіР»СЏРґР° РЅР° РІС‚РѕСЂРѕРµ С‚РµР»Рѕ
 
-                    // Установка начальной скорости в зависимости от типа орбиты (эллиптическая или круговая)
+                    // РЈСЃС‚Р°РЅРѕРІРєР° РЅР°С‡Р°Р»СЊРЅРѕР№ СЃРєРѕСЂРѕСЃС‚Рё РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ С‚РёРїР° РѕСЂР±РёС‚С‹ (СЌР»Р»РёРїС‚РёС‡РµСЃРєР°СЏ РёР»Рё РєСЂСѓРіРѕРІР°СЏ)
                     if (IsElipticalOrbit)
                     {
-                        a.GetComponent<Rigidbody>().velocity += a.transform.right * Mathf.Sqrt((G * m2) * ((2 / r) - (1 / (r * 1.5f))));
+                        a.GetComponent<Rigidbody>().velocity += a.transform.right * Mathf.Sqrt((G * M) * ((2 / r) - (1 / (r * 1.5f))));//
                     }
                     else
                     {
-                        a.GetComponent<Rigidbody>().velocity += a.transform.right * Mathf.Sqrt((G * m2) / r);
+                        a.GetComponent<Rigidbody>().velocity += a.transform.right * Mathf.Sqrt((G * M) / r);//РїРµСЂРІР°СЏ РєРѕСЃРјРёС‡РµСЃРєР°СЏ v= в€љ(GM/r)
                     }
                 }
             }
@@ -61,24 +61,24 @@ public class PlanetMovement : MonoBehaviour
 
     void Gravity()
     {
-        foreach (GameObject a in Spaceobjects) // Обход всех небесных тел для расчета силы гравитации
+        foreach (GameObject a in Spaceobjects) // РћР±С…РѕРґ РІСЃРµС… РЅРµР±РµСЃРЅС‹С… С‚РµР» РґР»СЏ СЂР°СЃС‡РµС‚Р° СЃРёР»С‹ РіСЂР°РІРёС‚Р°С†РёРё
         {
-            Vector3 totalForce = Vector3.zero; // Инициализация суммарной силы для текущего тела
-            foreach (GameObject b in Spaceobjects) // Обход всех небесных тел для расчета силы гравитации
+            Vector3 totalForce = Vector3.zero; // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃСѓРјРјР°СЂРЅРѕР№ СЃРёР»С‹ РґР»СЏ С‚РµРєСѓС‰РµРіРѕ С‚РµР»Р°
+            foreach (GameObject b in Spaceobjects) // РћР±С…РѕРґ РІСЃРµС… РЅРµР±РµСЃРЅС‹С… С‚РµР» РґР»СЏ СЂР°СЃС‡РµС‚Р° СЃРёР»С‹ РіСЂР°РІРёС‚Р°С†РёРё
             {
-                if (!a.Equals(b)) // Исключение самого себя из расчета
+                if (!a.Equals(b)) // РСЃРєР»СЋС‡РµРЅРёРµ СЃР°РјРѕРіРѕ СЃРµР±СЏ РёР· СЂР°СЃС‡РµС‚Р°
                 {
-                    float m1 = a.GetComponent<Rigidbody>().mass; // Масса первого небесного тела
-                    float m2 = b.GetComponent<Rigidbody>().mass; // Масса второго небесного тела
-                    float r = Vector3.Distance(a.transform.position, b.transform.position); // Расстояние между телами
+                    float m1 = a.GetComponent<Rigidbody>().mass; // РњР°СЃСЃР° РїРµСЂРІРѕРіРѕ РЅРµР±РµСЃРЅРѕРіРѕ С‚РµР»Р°
+                    float m2 = b.GetComponent<Rigidbody>().mass; // РњР°СЃСЃР° РІС‚РѕСЂРѕРіРѕ РЅРµР±РµСЃРЅРѕРіРѕ С‚РµР»Р°
+                    float r = Vector3.Distance(a.transform.position, b.transform.position); // Р Р°СЃСЃС‚РѕСЏРЅРёРµ РјРµР¶РґСѓ С‚РµР»Р°РјРё
 
-                    // Расчет силы гравитации и добавление ее к суммарной силе
-                    totalForce += (b.transform.position - a.transform.position).normalized * (G * (m1 * m2) / (r * r));
+                    // РЎРёР»Р° РіСЂР°РІРёС‚Р°С†РёРё РјРµР¶РґСѓ РґРІСѓРјСЏ С‚РµР»Р°РјРё РІС‹С‡РёСЃР»СЏРµС‚СЃСЏ СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј Р·Р°РєРѕРЅР° РІСЃРµРјРёСЂРЅРѕРіРѕ С‚СЏРіРѕС‚РµРЅРёСЏ РќСЊСЋС‚РѕРЅР°
+                    totalForce += (b.transform.position - a.transform.position).normalized * (G * (m1 * m2) / (r * r)); //F = G (m_1 m_2)/r^2 
                 }
             }
-            totalForces[a] = totalForce; // Сохранение суммарной силы для текущего тела
+            totalForces[a] = totalForce; // РЎРѕС…СЂР°РЅРµРЅРёРµ СЃСѓРјРјР°СЂРЅРѕР№ СЃРёР»С‹ РґР»СЏ С‚РµРєСѓС‰РµРіРѕ С‚РµР»Р°
 
-            // Применение силы к телу
+            // РџСЂРёРјРµРЅРµРЅРёРµ СЃРёР»С‹ Рє С‚РµР»Сѓ
             a.GetComponent<Rigidbody>().AddForce(totalForce);
         }
     }
